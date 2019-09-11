@@ -17,6 +17,8 @@ export class SessionService {
   private _currentSession: Session = null;
   currentSession = new BehaviorSubject<Session>(null);
   haveSession = false;
+  //stagingHome: SessionPlayer[] = [];
+  //stagingAway: SessionPlayer[] = [];
 
   constructor(private playerService: PlayersService) {
     if (localStorage.getItem('currentSession')) {

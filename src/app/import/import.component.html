@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col">
+    <button (click)="ExportCSV()" class="btn btn-primary mr-1">Export Players</button>
+    <br><br>
+    <input style="display: none" type="file" (change)="loadFile($event.target.files)" #hiddenfileinput>
+    <button (click)="hiddenfileinput.click()"  class="btn btn-primary mr-1">Choose File</button>
+    <button (click)="parse()" class="btn btn-primary mr-1">Import Players</button>
+    <br><br>
+    <button (click)="deleteAll()" class="btn btn-danger mr-1">DELETE ALL PALYERS</button>
+
+  </div>
+</div>
+<br>
+<div>
+  <table *ngIf="tableData">
+    <tr><th>Players to Import</th></tr>
+    <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Level</th>
+    </tr>
+    <tr *ngFor="let row of tableData">
+      <td>{{ row.name }}</td>
+      <td>{{ row.gender }}</td>
+      <td>{{ row.level}}</td>
+    </tr>
+  </table>
+</div>

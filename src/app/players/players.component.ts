@@ -28,7 +28,13 @@ export class PlayersComponent implements OnInit {
   constructor(
     public playersService: PlayersService,
     private modalService: NgbModal
-  ) {}
+  ) {
+    this.playersService.players.getValue().sort((a, b) => {
+      if (a.name < b.name) return -1;
+      else if (a.name > b.name) return 1;
+      else return 0;
+    });
+  }
 
   ngOnInit() {
     this.showTestData = !environment.production;

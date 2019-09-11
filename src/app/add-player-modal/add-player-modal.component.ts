@@ -19,7 +19,13 @@ export class AddPlayerModalComponent implements OnInit, OnDestroy {
     private activeModal: NgbActiveModal,
     private playersService: PlayersService,
     private sessionService: SessionService
-  ) {}
+  ) {
+    this.playersService.players.getValue().sort((a, b) => {
+      if (a.name < b.name) return -1;
+      else if (a.name > b.name) return 1;
+      else return 0;
+    });
+  }
 
   ngOnInit() {
     this.sub = combineLatest(

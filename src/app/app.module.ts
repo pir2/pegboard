@@ -14,6 +14,8 @@ import { AddPlayerModalComponent } from './add-player-modal/add-player-modal.com
 import { CourtComponent } from './court/court.component';
 import { PlayingPipe } from './playing.pipe';
 import { GameFinishedModalComponent } from './game-finished-modal/game-finished-modal.component';
+import { ImportComponent } from './import/import.component';
+import { PapaParseModule } from 'ngx-papaparse';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { GameFinishedModalComponent } from './game-finished-modal/game-finished-
     AddPlayerModalComponent,
     CourtComponent,
     PlayingPipe,
-    GameFinishedModalComponent
+    GameFinishedModalComponent,
+    ImportComponent
   ],
   entryComponents: [
     PlayerModalComponent,
@@ -37,7 +40,8 @@ import { GameFinishedModalComponent } from './game-finished-modal/game-finished-
     FormsModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    PapaParseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
